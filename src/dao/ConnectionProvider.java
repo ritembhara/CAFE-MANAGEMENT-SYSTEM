@@ -1,0 +1,20 @@
+
+package dao;
+import java.sql.*;
+public class ConnectionProvider {
+    public static Connection getCon(){
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/cms","root","12345");
+            System.out.println("kjfkdjfkdj");
+            return con;
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public static void main(String arg[]){
+        getCon();
+    }
+}
